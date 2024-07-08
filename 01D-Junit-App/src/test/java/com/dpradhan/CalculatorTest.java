@@ -48,6 +48,26 @@ public class CalculatorTest {
 		assertEquals(expected, actual);
 	}
 	
+	@Test
+	public void testDiv_01() {
+		Integer actual = calc.div(10, 4);
+		Integer expected = 2;
+		assertEquals(expected,actual);
+	}
+	
+	@Test(expected = ArithmeticException.class)
+	public void testDiv_02() {
+		calc.div(10, 0);
+//		Integer actual = calc.div(10, 0);
+//		Integer expected = 2;
+//		assertEquals(expected,actual);
+	}
+	
+	@Test(timeout=100)
+	public void testDev_03() {
+		calc.div(12,6);
+	}
+	
 	@AfterClass
 	public static void destroy1() {
 		calc=null;
